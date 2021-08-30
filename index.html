@@ -17,7 +17,7 @@
 <body>
 
     <header>
-        <ul id="scene">
+        <ul id="scene" class="unselectable">
             <li class="layer" data-depth="0.5">
                 <img src="assets/montagne1.png">
             </li>
@@ -40,10 +40,13 @@
             </li>
         </ul>
 
-        <h1 id="title" class="glow">MATIIX</h1>
+        <h1 id="title" class="glow unselectable">MATIIX</h1>
     </header>
     <section id="presentation">
-        <h1>Les présentations</h1>
+        <img src="assets/meteor_big.svg" class="svg-spawn">
+        <div id="start-tag-container">
+            <h1 class="start-tag unselectable">> START<span>_</span></h1>
+        </div>
     </section>
     <footer>
         <h1>Le footer est ici</h1>

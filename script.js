@@ -1,5 +1,6 @@
 const title = document.getElementById('title');
 const lightTop = document.getElementById('lightTop');
+const startBtn = document.getElementById('start-tag-container');
 
 // parallax
 var scene = document.getElementById('scene');
@@ -15,6 +16,14 @@ window.addEventListener('scroll', function() {
 })
 
 
-// 350px => text caché totalement
+// start button
+startBtn.addEventListener('click', function() {
+    startBtn.style.height = "0%";
+    startBtn.style.opacity = "0";
+})
 
-// 550px
+
+// interval pour le fond de la section presentation
+var x = setInterval(() => {
+    
+}, 500);

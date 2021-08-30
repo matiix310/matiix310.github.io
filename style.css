@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -10,6 +13,15 @@ body {
 
 body::-webkit-scrollbar {
     display: none;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 header {
@@ -61,8 +73,54 @@ header img {
     }
 }
 
+
+/* 2nd section */
+
 #presentation {
     height: 100vh;
     background: #080f27;
     color: #fff;
+    position: relative;
+}
+
+#start-tag-container {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+    height: 150px;
+    align-items: center;
+    white-space: nowrap;
+}
+
+#start-tag-container .start-tag span {
+    animation: wink 1.5s infinite ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+@keyframes wink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+#start-tag-container .start-tag:hover {
+    cursor: pointer;
+}
+
+#start-tag-container .start-tag:hover span {
+    animation: none;
+}
+
+/* svg spawning */
+.svg-spawn {
+    position: absolute;
+    width: 200px;
+    fill: white;
+    stroke-width: 5px;
+    stroke: white;
 }
