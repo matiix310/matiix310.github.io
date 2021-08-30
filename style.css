@@ -81,6 +81,7 @@ header img {
     background: #080f27;
     color: #fff;
     position: relative;
+    overflow: hidden;
 }
 
 #start-tag-container {
@@ -117,17 +118,46 @@ header img {
 }
 
 /* svg spawning */
-.meteor-big {
+
+.meteor {
     position: absolute;
-    width: 400px;
     fill: transparent;
     stroke-width: 5px;
     stroke: yellow;
-    stroke-dasharray: 1480;
-    stroke-dashoffset: 1480;
-    transition: all 1s ease-in-out;
+    animation: meteor-anim 2.3s forwards ease-in-out;
 }
 
-.svg-complete {
-    stroke-dashoffset: 0;
+.meteor-big {
+    width: 400px;
+    stroke-dasharray: 1480;
+    stroke-dashoffset: 1480;
+}
+
+.meteor-mid {
+    width: 400px;
+    stroke-dasharray: 830;
+    stroke-dashoffset: 830;
+}
+
+.meteor-small {
+    width: 400px;
+    stroke-dasharray: 670;
+    stroke-dashoffset: 670;
+}
+
+@keyframes meteor-anim {
+    25% {
+        stroke-dashoffset: 0;
+        fill: transparent;
+    } 35% {
+        transform: translate(0, 0);
+    } 
+    50% {
+        fill: yellow;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        fill: yellow;
+        transform: translate(120vw, 120vh);
+    }
 }
