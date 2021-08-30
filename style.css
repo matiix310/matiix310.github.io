@@ -117,10 +117,17 @@ header img {
 }
 
 /* svg spawning */
-.svg-spawn {
+.meteor-big {
     position: absolute;
-    width: 200px;
-    fill: white;
+    width: 400px;
+    fill: transparent;
     stroke-width: 5px;
-    stroke: white;
+    stroke: yellow;
+    stroke-dasharray: 1480;
+    stroke-dashoffset: 1480;
+    transition: all 1s ease-in-out;
+}
+
+.svg-complete {
+    stroke-dashoffset: 0;
 }
