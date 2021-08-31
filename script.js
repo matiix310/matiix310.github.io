@@ -1,6 +1,10 @@
 const title = document.getElementById('title');
 const lightTop = document.getElementById('lightTop');
 const startBtn = document.getElementById('start-tag-container');
+const controllerContainer = document.getElementById('controller');
+const cardContainer = document.getElementById('cardContainer');
+const cardFrame = document.getElementById('card');
+const projectFrame = document.getElementById('projectFrame');
 
 // parallax
 var scene = document.getElementById('scene');
@@ -8,7 +12,6 @@ var parallax = new Parallax(scene);
 
 window.addEventListener('scroll', function() {
     var value = window.scrollY;
-    // console.log(value);
 
     if (value < 500) {
         title.style.top = 200-value + "px";
@@ -20,6 +23,7 @@ window.addEventListener('scroll', function() {
 startBtn.addEventListener('click', function() {
     startBtn.style.height = "0%";
     startBtn.style.opacity = "0";
+    projectFrame.classList.add('active');
 })
 
 
@@ -95,4 +99,43 @@ var x = setInterval(() => {
     setTimeout(() => {
         document.getElementById('star'+tempIndex).remove()
     }, 5100);
-}, 1000);
+}, 2000);
+
+let controllers = controllerContainer.children;
+
+let cardIndex = 0;
+controllers[cardIndex].classList.add('active');
+
+for (let i = 0; i<controllers.length; i++) {
+    let child = controllers[i]
+    child.addEventListener('click', function() {
+        switchCard(i)
+    })
+}
+
+function switchCard(index) {
+    if (cardIndex === index) return;
+    setActiveController(index)
+
+    if (index > cardIndex) cardFrame.style.transform = "translate(-50%, -50%)rotate(-30deg)";
+    else cardFrame.style.transform = "translate(-50%, -50%)rotate(30deg)";
+
+    // move card to selected one
+    setTimeout(() => {
+        cardContainer.style.transform = "translateX(-"+(window.innerWidth*40/100*index)+"px)"        
+    }, 300);
+    setTimeout(() => {
+        cardFrame.style.transform = "translate(-50%, -50%)rotate(0deg)";
+    }, 600);
+
+    cardIndex = index;
+}
+
+function setActiveController(index) {
+    for (let i=0; i<controllers.length; i++) {
+        if (i === index) {
+            controllers[index].classList.add('active');
+        }
+        else controllers[i].classList.remove('active')
+    }
+}
