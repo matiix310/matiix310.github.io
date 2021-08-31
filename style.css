@@ -192,8 +192,8 @@ header img {
 .card {
     border-radius: 20px;
     overflow: hidden;
-    width: 40vw;
-    height: 40vw;
+    width: 35vw;
+    height: 35vw;
     background: #30395052;
     position: absolute;
     left: 50%;
@@ -249,4 +249,11 @@ header img {
 
 .controller svg.active circle {
     stroke-width: 7px;
+}
+
+
+/* footer */
+footer {
+    height: 20vh;
+    background: linear-gradient(#080f27, #290933);
 }

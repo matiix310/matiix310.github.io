@@ -122,7 +122,7 @@ function switchCard(index) {
 
     // move card to selected one
     setTimeout(() => {
-        cardContainer.style.transform = "translateX(-"+(window.innerWidth*40/100*index)+"px)"        
+        cardContainer.style.transform = "translateX(-"+(window.innerWidth*35/100*index)+"px)"        
     }, 300);
     setTimeout(() => {
         cardFrame.style.transform = "translate(-50%, -50%)rotate(0deg)";
